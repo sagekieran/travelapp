@@ -15,4 +15,5 @@ class CategoriesController < ApplicationController
       format.json { render json: @category }
     end
   end
+  
 end
