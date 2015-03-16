@@ -20,7 +20,7 @@
 
 // /suggestion/'suggestion_id'/upvote = upvote
 
-var url = 'http://localhost:3000/suggestion/1/all';
+var url = 'http://localhost:3000/suggestion/3/all';
 
 var xhr = new XMLHttpRequest();
 
