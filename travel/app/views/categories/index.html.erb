@@ -1,9 +1,9 @@
 <h1>Categories</h1>
 
-    <% @categories.each do |trip| %>
+    <% @categories.each do |category| %>
         <p><%= categories.name %></p>
-        <p><%= link_to 'Show Suggestions', suggestions %></p>
-        <p><%= link_to 'Delete Category', trip, method: :delete, data: { confirm: 'Are you sure?' } %></p>
     <% end %>
+        <p><%= link_to 'Show Suggestions', suggestions_path %>
+        </p>
 
 

@@ -31,8 +31,8 @@ Suggestion.create([
 ])
 
 Category.create([
-  { name: "Food"      trip_id: "1"}
-  { name: "Lodging"   trip_id: "1"}
-  { name: "Adventure" trip_id: "1"}
+  { name: "Food",      trip_id: "1"},
+  { name: "Lodging",   trip_id: "1"},
+  { name: "Adventure", trip_id: "1"}
 ])
 
