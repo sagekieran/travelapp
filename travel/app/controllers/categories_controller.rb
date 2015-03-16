@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
     id = params(:trip_id)
     @categories = Category.find_by(trip_id: id)
     respond_to do |format|
-      format.json json: @categories
+      format.json { render json: @categories }
     end
   end
 
@@ -12,7 +12,7 @@ class CategoriesController < ApplicationController
     id = params(:trip_id)
     @category = Category.find(:id)
     respond_to do |format|
-      format.json json: @category
+      format.json { render json: @category }
     end
   end
 end
