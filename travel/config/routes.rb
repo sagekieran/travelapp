@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   resources :suggestions, only: [:create, :destroy]
 
-  resources :categories, only: [:index, :show, :create]
+  # resources :categories, only: [:index, :show, :create]
 
   resources :trips
 
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   get '/suggestion/:id/downvote' => 'suggestions#downvote'
 
   get '/suggestion/:id/getcomments' => 'comments#suggestion_comments'
+
+  get '/categories/:trip_id' => 'categories#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

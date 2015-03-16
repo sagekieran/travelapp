@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   end
 
   def suggestion_comments
-    @comments = Comment.find(suggestion_id: params[:suggestion_id])
+    @comments = Comment.where(suggestion_id: params[:suggestion_id]).all
     respond_to do |format|
       format.json { render json: @comments }
     end
