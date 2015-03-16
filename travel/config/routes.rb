@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :comments, only: [:create, :index]
 
-  resources :suggestions, only: [:create, :destroy]
+  resources :suggestions, only: [:create, :destroy, :index]
 
   # resources :categories, only: [:create]
 
