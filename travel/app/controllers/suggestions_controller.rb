@@ -13,7 +13,7 @@ class SuggestionsController < ApplicationController
   end
 
   def show
-    @suggestion = Suggesion.find(params[:id])
+    @suggestion = Suggestion.find(params[:id])
     respond_to do |format|
       format.json { render json: @suggestion }
     end
