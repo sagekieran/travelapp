@@ -22,9 +22,15 @@ Rails.application.routes.draw do
 
   get '/suggestion/:id/getcomments' => 'comments#suggestion_comments'
 
+  get '/suggestion/:category_id/all' => 'suggestions#index'
+
+  get '/suggestion/:id/show' => 'suggestions#show'
+
   get '/categories/:trip_id' => 'categories#index'
 
   get '/categories/:id/show' => 'categories#show'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
