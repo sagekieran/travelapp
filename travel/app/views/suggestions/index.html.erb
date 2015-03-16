@@ -1,24 +1,9 @@
 <h1>Suggestions</h2>
 
-    <% @categories.each do |trip| %>
-        <p><%= categories.name %></p>
-    <% if @suggestion.category_id == 1 %>
-      <p><%= @suggestion.name    %></p>
-      <p><%= @suggestion.content %></p>
-      <p><%= @suggestion.link    %></p>
-
-    <% elsif @suggesti<p>on.category_id == 2 %></p>
-      <p><%= @suggestion.name    %></p>
-      <p><%= @suggestion.content %></p>
-      <p><%= @suggestion.link    %></p>
-
-    <% else @suggestion.category_id == 3 %>
-      <p><%= @suggestion.name    %></p>
-      <p><%= @suggestion.content %></p>
-      <p><%= @suggestion.link    %></p>
-
-      <p><%= link_to 'View this Suggestion', suggestion_path %></p>
-      <p><%= link_to 'Delete Category', trip, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+    <% @suggestions.each do |suggestion| %>
+      <p><%= suggestion.name    %></p>
+      <p><%= suggestion.content %></p>
+      <p><%= suggestion.link    %></p>
     <% end %>
-    <% end %>
+
 
