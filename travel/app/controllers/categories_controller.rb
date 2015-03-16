@@ -5,12 +5,13 @@ class CategoriesController < ApplicationController
     @categories = Category.where(trip_id: id).all
     respond_to do |format|
       format.json { render json: @categories }
+      format.html 
     end
   end
 
   def show
-    id = params[:trip_id]
-    @category = Category.find(:id)
+    id = params[:id]
+    @category = Category.find(id)
     respond_to do |format|
       format.json { render json: @category }
     end
