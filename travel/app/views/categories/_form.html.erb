@@ -12,21 +12,34 @@
   <% end %>
 
 
+create_table "suggestions", force: :cascade do |t|
+    t.integer  "user_id",                 null: false
+    t.integer  "category_id",             null: false
+    t.string   "title",                   null: false
+    t.text     "content"
+    t.string   "link"
+    t.integer  "upvote",      default: 0
+    t.integer  "downvote",    default: 0
+
   <div class="field">
-    <%= f.label :location %><br>
-    <%= f.text_field :location %>
-  </div>
-  <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :title 'Title' %><br>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.label :content 'Content' %><br>
+    <%= f.text_field :content %>
   </div>
   <div class="field">
-    <%= f.label :duration %><br>
-    <%= f.text_field :duration %>
+    <%= f.label :link 'Link' %><br>
+    <%= f.text_field :link %>
+  </div>
+  <div class="field">
+    <%= f.label :upvote 'upvote?'%><br>
+    <%= f.radio_button_field :upvote 'yes' 4%>
+  </div>
+  <div class="field">
+    <%= f.label :downvote 'downvote?'%><br>
+    <%= f.radio_button_field :downvote 'yes' %>
   </div>
   <div class="actions">
     <%= f.submit %>
