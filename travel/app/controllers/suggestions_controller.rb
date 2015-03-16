@@ -5,6 +5,19 @@ class SuggestionsController < ApplicationController
     @suggestion.save
   end
 
+  def index
+    @suggestions = Suggestion.where(category_id: params[:category_id])
+    respond_to do |format|
+      format.json { render json: @suggestions }
+    end
+  end
+
+  def show
+    @suggestion = Suggesion.find(params[:id])
+    respond_to do |format|
+      format.json { render json: @suggestion }
+    end
+  end
 
   def upvote
     id = params[:id]
