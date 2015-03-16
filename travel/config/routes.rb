@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get '/suggestion/:id/downvote' => 'suggestions#downvote'
 
+  get '/suggestion/:id/getcomments' => 'comments#suggestion_comments'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
