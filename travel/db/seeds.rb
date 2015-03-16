@@ -29,3 +29,10 @@ Suggestion.create([
   { user_id: User.find_by(email: "sadestevens@gmail.com").id,category_id: "3", title: "Adventure", title: "Spring Break", title: "Horse riding tour",        content: "this place looks pretty cool from the pictures, we should check it out at some point",
     link: "http://www.dosomethingdifferent.com/images/store/experience/landscape_image/1828/Horseback_Riding_In_The_Jungle8.jpg?1308854312", upvote: "0", downvote: "0"}
 ])
+
+Category.create([
+  { name: "Food"      trip_id: "1"}
+  { name: "Lodging"   trip_id: "1"}
+  { name: "Adventure" trip_id: "1"}
+])
+

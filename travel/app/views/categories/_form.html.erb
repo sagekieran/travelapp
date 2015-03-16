@@ -1,10 +1,10 @@
-<%= form_for(@suggestions) do |f| %>
-  <% if @suggestions.errors.any? %>
+<%= form_for(@categories) do |f| %>
+  <% if @categories.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@suggestions.errors.count, "error") %> something prohibited this suggestion from being saved:</h2>
+      <h2><%= pluralize(@categories.errors.count, "error") %> something prohibited this category from being saved:</h2>
 
       <ul>
-      <% @suggestions.errors.full_messages.each do |message| %>
+      <% @categories.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,34 +12,9 @@
   <% end %>
 
 
-create_table "suggestions", force: :cascade do |t|
-    t.integer  "user_id",                 null: false
-    t.integer  "category_id",             null: false
-    t.string   "title",                   null: false
-    t.text     "content"
-    t.string   "link"
-    t.integer  "upvote",      default: 0
-    t.integer  "downvote",    default: 0
-
   <div class="field">
-    <%= f.label :title 'Title' %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :content 'Content' %><br>
-    <%= f.text_field :content %>
-  </div>
-  <div class="field">
-    <%= f.label :link 'Link' %><br>
-    <%= f.text_field :link %>
-  </div>
-  <div class="field">
-    <%= f.label :upvote 'upvote?'%><br>
-    <%= f.radio_button_field :upvote 'yes' 4%>
-  </div>
-  <div class="field">
-    <%= f.label :downvote 'downvote?'%><br>
-    <%= f.radio_button_field :downvote 'yes' %>
+    <%= f.label :name 'Name of Category' %><br>
+    <%= f.text_field :name %>
   </div>
   <div class="actions">
     <%= f.submit %>
