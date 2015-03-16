@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'sessions#new'
+
 
   resources :comments, only: [:create, :index]
 
@@ -30,7 +30,11 @@ Rails.application.routes.draw do
 
   get '/categories/:id/show' => 'categories#show'
 
+  get '/return_current_user' => 'mains#return_current_user'
 
+  get '/usertrip' => 'trips#user_trip'
+
+  get '/' => 'mains#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

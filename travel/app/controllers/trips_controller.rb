@@ -14,6 +14,13 @@ class TripsController < ApplicationController
   def show
   end
 
+  def user_trip
+    @trip = Trip.where(user_id: current_user.id)
+    respond_to do |format|
+      format.json { render json: @trip }
+    end
+  end
+
   # GET /trips/new
   def new
     @trip = Trip.new
