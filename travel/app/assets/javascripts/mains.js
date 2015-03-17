@@ -20,7 +20,13 @@
 
 // /suggestion/'suggestion_id'/upvote = upvote
 
-var url = 'http://localhost:3000/suggestion/3/all';
+// /suggestion/3/all
+
+
+// This returns the user's info
+var UserInfo = function(){
+
+var url = 'http://localhost:3000/return_current_user';
 
 var xhr = new XMLHttpRequest();
 
@@ -28,9 +34,65 @@ xhr.addEventListener('load', function(e) {
    var d = xhr.responseText;
    var parsed = JSON.parse(d);
 
-   console.log(parsed);
+   console.log(parsed.id);
 
 })
 
 xhr.open("GET", url);
 xhr.send();
+
+}
+
+UserInfo()
+
+
+// this is the current user's trip
+var UserTrip = function(){
+
+var url = 'http://localhost:3000/usertrip';
+
+var xhr = new XMLHttpRequest();
+
+xhr.addEventListener('load', function(e) {
+   var d = xhr.responseText;
+   var parsed = JSON.parse(d);
+   console.log(parsed)
+
+   //this is the header title of the trip
+   // later we will have to loop through all of the trips
+	var location = document.getElementById('location')
+	location.innerHTML = parsed[0].location;
+
+	TripCategories(parsed[0].id)
+
+})
+
+xhr.open("GET", url);
+xhr.send();
+
+}
+
+UserTrip();
+
+
+
+
+// this is all the categories from the trip
+var TripCategories = function(trip_id){
+
+var url = 'http://localhost:3000/categories/' + trip_id + '.json';
+
+var xhr = new XMLHttpRequest();
+
+xhr.addEventListener('load', function(e) {
+   var d = xhr.responseText;
+   var parsed = JSON.parse(d);
+
+   console.log(parsed)
+
+})
+
+xhr.open("GET", url);
+xhr.send();
+
+}
