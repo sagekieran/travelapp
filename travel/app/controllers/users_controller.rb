@@ -2,6 +2,13 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
   before_action :require_current_user, except: :new
 
+  def user_friends
+    @friends = Friend.user_friends(current_user.id)
+    respond_to do |format|
+      format.json { render json: @friends }
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index
@@ -51,6 +58,7 @@ class UsersController < ApplicationController
       end
     end
   end
+
 
   # DELETE /users/1
   # DELETE /users/1.json

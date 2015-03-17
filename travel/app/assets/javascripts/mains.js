@@ -20,6 +20,8 @@
 
 // /suggestion/'suggestion_id'/upvote = upvote
 
+// /userfriends = returns user objects of current user's friends
+
 var url = 'http://localhost:3000/suggestion/3/all';
 
 var xhr = new XMLHttpRequest();

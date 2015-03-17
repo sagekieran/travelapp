@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :user_friends
+
   resources :comments, only: [:create, :index]
 
   resources :suggestions, only: [:create, :destroy, :index]
@@ -34,7 +36,11 @@ Rails.application.routes.draw do
 
   get '/usertrip' => 'trips#user_trip'
 
+  get '/userfriends' => 'users#user_friends'
+
   get '/' => 'mains#index'
+
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
