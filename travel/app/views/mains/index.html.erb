@@ -27,10 +27,10 @@
 					<button><span class = "fa fa-plus"></span></button>
 				</div>
 				<div>
-					<ul>
-						<li><a href="#">General</a></li>
-						<li class = "chats_clicked"><a href="#">Food</a></li>
-						<li><a href="#">Lodging</a></li>
+					<ul id = "category_elements">
+						<!-- <li>General</li>
+						<li class = "chats_clicked">Food</li>
+						<li>Lodging</li> -->
 					</ul>
 				</div>
 			</div>
@@ -56,11 +56,11 @@
 
 <!-- SECOND -->
 	<section id = "index_suggestion">
-		<div id = "suggestion_heading">
+<!--	<div id = "suggestion_heading">
 			<a href="#">Create New Suggestion</a>
 		</div>
 
-		<div class = "suggestion_container">
+ 		<div class = "suggestion_container">
 			<div>
 				<h3>Steak Night</h3>
 			</div>
@@ -125,7 +125,7 @@
 					<p>2</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 	</section>
 
 
@@ -134,7 +134,7 @@
 	<section id = "index_thread">
 		<div id = "thread_heading">
 
-			<div id = "thread_info">
+<!-- 			<div id = "thread_info">
 				<p>Hey Guys! We should try this patio, it ranked top 5 in Puerto Villarta. Who's interested?</p>
 				<a href="#">link here</a>
 			</div>
@@ -149,13 +149,13 @@
 					<p class = "thread_dots"><span class = "fa fa-circle"></span><span class = "fa fa-circle"></span><span class = "fa fa-circle"></span><span class = "fa fa-circle"></span><span class = "fa fa-circle"></span></p>
 				</div>
 
-			</div>
+			</div> -->
 
 		</div>
 
-		<div class = "comment_container">
-			<div class = "comment">
-				<%= image_tag "users.jpg"%>
+		<div id = "comment_container">
+<!-- 			<div class = "comment">
+				<img src = "assets/users.jpg">
 				<div>
 					<h2>Lorum ipsum</h2>
 					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -163,46 +163,13 @@
 					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 					consequat.</p>
 				</div>
-			</div>
+			</div> -->
 
-			<div class = "comment">
-				<%= image_tag "users.jpg"%>
-				<div>
-					<h2>Lorum ipsum</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</p>
-				</div>
-			</div>
-
-			<div class = "comment">
-				<%= image_tag "users.jpg"%>
-				<div>
-					<h2>Lorum ipsum</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</p>
-				</div>
-			</div>
-
-			<div class = "comment">
-				<!-- <img src="assets/users.jpg"> -->
-				<%= image_tag "users.jpg"%>
-				<div>
-					<h2>Lorum ipsum</h2>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-					consequat.</p>
-				</div>
-			</div>
 		</div>
 
 		<div id = "comment_post">
 			<form>
-				<input placeholder = "Make new suggestion">
+				<input placeholder = "Comments...">
 				<button>Post</button>
 			</form>
 		</div>
