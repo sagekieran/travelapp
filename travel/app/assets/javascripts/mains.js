@@ -28,6 +28,10 @@ var UserInfo = function(){
 
 var url = 'http://localhost:3000/return_current_user';
 
+// /userfriends = returns user objects of current user's friends
+
+var url = 'http://localhost:3000/suggestion/3/all';
+
 var xhr = new XMLHttpRequest();
 
 xhr.addEventListener('load', function(e) {
