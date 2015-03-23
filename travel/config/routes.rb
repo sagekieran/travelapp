@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
 
 
-  resources :user_friends
+  resources :friends
 
   resources :comments, only: [:create, :index]
 
@@ -36,7 +36,7 @@ Rails.application.routes.draw do
 
   get '/usertrip' => 'trips#user_trip'
 
-  get '/userfriends' => 'users#user_friends'
+  get '/userfriends' => 'friends#user_friends'
 
   get '/' => 'mains#index'
 
