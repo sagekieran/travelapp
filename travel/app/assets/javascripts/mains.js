@@ -24,6 +24,12 @@
 
 $(document).ready(function(){
 
+//these keep track of current clicked items by their id number
+var currentCategory;
+var currentSuggestion;
+
+
+
 // This returns the user's info
 var UserInfo = function(){
 
@@ -35,7 +41,7 @@ xhr.addEventListener('load', function(e) {
    var d = xhr.responseText;
    var parsed = JSON.parse(d);
 
-   console.log(parsed);
+   // console.log(parsed);
 
 })
 
@@ -57,7 +63,7 @@ var xhr = new XMLHttpRequest();
 xhr.addEventListener('load', function(e) {
    var d = xhr.responseText;
    var parsed = JSON.parse(d);
-   console.log(parsed)
+   // console.log(parsed)
 
    //this is the header title of the trip
    // later we will have to loop through all of the trips
@@ -89,11 +95,11 @@ xhr.addEventListener('load', function(e) {
    var d = xhr.responseText;
    var parsed = JSON.parse(d);
 
-   console.log(parsed)
+   // console.log(parsed)
    var ul = document.getElementById('category_elements')
 
    parsed.forEach(function(category){
-   	console.log(category.name)
+   	// console.log(category.name)
    	var li = document.createElement('li');
    	li.innerHTML = category.name;
    	li.className = "chats_unclicked"
@@ -101,7 +107,12 @@ xhr.addEventListener('load', function(e) {
 
    	// when you click on a category
    	li.addEventListener('click', function(){
-   		// this unclicks all the categories
+
+   		//this defines what category is clicked on
+   		currentCategory = category.id;
+   		var input_category = document.getElementById('category_id');
+   		input_category.value = currentCategory;
+
    		for(var i = 0; i <= ul.childNodes.length-1; i++){
  			if(ul.childNodes[i].tagName === "LI"){
  				ul.childNodes[i].className = "chats_unclicked"
@@ -148,7 +159,7 @@ var CategorySuggestions = function(category_id){
 	   var d = xhr.responseText;
 	   var parsed = JSON.parse(d);
 
-	   console.log(parsed);
+	   // console.log(parsed);
 	   // this is the div everything this appended to
 	   var index_suggestion = document.getElementById('index_suggestion');
 
@@ -161,15 +172,29 @@ var CategorySuggestions = function(category_id){
 		suggestion_heading.id = "suggestion_heading";
 		index_suggestion.appendChild(suggestion_heading);
 
+
+		// this trigger a modal
 		var a = document.createElement('a');
-		//this needs to be changed once 
-		a.href = "#";
 		a.innerHTML = "Create New Suggestion";
 		suggestion_heading.appendChild(a);
+		a.addEventListener('click', function(){
+			var modal = document.getElementById('overlay');
+			if(modal.style.visibility === "visible"){
+				modal.style.visibility = "hidden";
+			}else{
+				modal.style.visibility = "visible";
+			}
+			var modal_close = document.getElementById('modal_close')
+			modal_close.addEventListener('click', function(){
+				modal.style.visibility = "hidden";
+			})
+		});
+
+
 
 		//this creates aall of the suggestions
 	   parsed.forEach(function(suggestion){
-	   		console.log(suggestion)
+	   		// console.log(suggestion)
 	   		var container = document.createElement('div');
 	   		container.className = 'suggestion_container suggestion_unclicked'
 	   		index_suggestion.appendChild(container);
@@ -214,6 +239,14 @@ var CategorySuggestions = function(category_id){
 	   		vote_two.appendChild(down_vote)
 
 	   		container.addEventListener('click', function(){
+	   			// this sets the current clicked suggestion to the id number
+	   			currentSuggestion = suggestion.id;
+
+	   			// this sets the value of the hidden input on the comment post to the suggestion id
+	   			var suggestion_id = document.getElementById('suggestion_id');
+	   			suggestion_id.value = currentSuggestion;
+	   			console.log(suggestion_id.value)
+
 	   			// unhighlights all of the suggestions
 		   		for(var i = 0; i <= index_suggestion.childNodes.length-1; i++){
 		 			if(index_suggestion.childNodes[i].className === "suggestion_container suggestion_clicked"){
@@ -311,7 +344,7 @@ xhr.addEventListener('load', function(e) {
    var d = xhr.responseText;
    var parsed = JSON.parse(d);
 
-   console.log(parsed);
+   // console.log(parsed);
    var comment_container = document.getElementById('comment_container')
 
     while( comment_container.hasChildNodes() ){
@@ -345,7 +378,7 @@ xhr.addEventListener('load', function(e) {
    		comment_div.appendChild(date_created)
 
 
-   	console.log(comment)
+   	// console.log(comment)
    })
 
 })

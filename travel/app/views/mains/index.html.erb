@@ -54,8 +54,13 @@
 
 
 
+
+
+
 <!-- SECOND -->
 	<section id = "index_suggestion">
+
+
 <!--	<div id = "suggestion_heading">
 			<a href="#">Create New Suggestion</a>
 		</div>
@@ -126,11 +131,10 @@
 				</div>
 			</div>
 		</div> -->
+
 	</section>
-
-
-
 <!-- THREE -->
+
 	<section id = "index_thread">
 		<div id = "thread_heading">
 
@@ -167,10 +171,28 @@
 
 		</div>
 
+		<!-- form for comments -->
 		<div id = "comment_post">
-			<form>
-				<input placeholder = "Comments...">
+			<form action="/comments" method="post">
+				<input type="text" name = "content" placeholder="Comments" required />
+				<input id = "suggestion_id" type = "hidden" name = "suggestion_id" value = "" required />
 				<button>Post</button>
 			</form>
 		</div>
 	</section>
+
+
+	<!-- modal -->
+		<div id="overlay">
+		     <div>
+		     	<button id = "modal_close">X</button>
+		     	<h3>Make a new Suggestion</h3>
+		        <form id = "suggestion_form" action = "/suggestions" method = "post">
+		        	<input type="text" name="title" placeholder= "Title" required>
+		        	<input type="text" name="content" placeholder= "Comment" required>
+		        	<input type="text" name="link" placeholder= "Link" required>
+		        	<input id = "category_id" type = "hidden" name = "category_id" value = "" required />
+		        	<button>Post</button>
+		        </form>
+		     </div>
+		</div>
