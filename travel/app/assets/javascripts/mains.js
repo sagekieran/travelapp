@@ -107,6 +107,9 @@ xhr.addEventListener('load', function(e) {
 
    	// when you click on a category
    	li.addEventListener('click', function(){
+   		//this turns the comment input box to display none
+		var comment_input = document.getElementById('comment_input');
+	   	comment_input.className = "comment_unclicked";
 
    		//this defines what category is clicked on
    		currentCategory = category.id;
@@ -244,6 +247,11 @@ var CategorySuggestions = function(category_id){
 	   			// this sets the current clicked suggestion to the id number
 	   			currentSuggestion = suggestion.id;
 
+	   			//this displays the comment input box when a suggestion is clicked
+	   			var comment_input = document.getElementById('comment_input');
+	   			comment_input.className = "comment_clicked";
+
+
 	   			// this sets the value of the hidden input on the comment post to the suggestion id
 	   			var suggestion_id = document.getElementById('suggestion_id');
 	   			suggestion_id.value = currentSuggestion;
@@ -273,7 +281,7 @@ var CategorySuggestions = function(category_id){
 
 	 			//this is the suggestion
 	 			var thread_content = document.createElement('p');
-	 			thread_info.innerHTML = suggestion.content;
+	 			thread_content.innerHTML = suggestion.content;
 	 			thread_info.appendChild(thread_content);
 
 	 			//this is the link
