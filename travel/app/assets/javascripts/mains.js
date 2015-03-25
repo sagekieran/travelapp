@@ -27,7 +27,11 @@ $(document).ready(function(){
 //these keep track of current clicked items by their id number
 var currentCategory;
 var currentSuggestion;
+// console.log(document.URL)
 
+
+// this is the current url
+var current_url = document.URL;
 
 
 // This returns the user's info
@@ -319,6 +323,11 @@ var CategorySuggestions = function(category_id){
 	 			span_up.className = "fa fa-arrow-circle-o-up fa-2x green"
 	 			arrow_up.appendChild(span_up);
 	 			makeDots(thread_up)
+
+	 			// this is the ajax call for upvoting
+	 			// span_up.addEventListener('click', function(){
+	 			// 	/suggestion/'suggestion_id'/upvote
+	 			// })
 
 	 			var thread_down = document.createElement('div')
 	 			thread_vote.appendChild(thread_down)
