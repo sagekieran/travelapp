@@ -4,9 +4,11 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user_id = current_user.id
     @comment.save
-    respond_to do |format|
-      format.json { render json: @comment }
-    end
+    # respond_to do |format|
+    #   format.json { render json: @comment }
+    # end
+    redirect_to :back
+    # redirect_to '/suggestion/:category_id/all'
   end
 
   def index

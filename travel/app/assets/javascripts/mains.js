@@ -137,7 +137,7 @@ xhr.addEventListener('load', function(e) {
 			thread_heading.removeChild(thread_heading.lastChild);
 		}
 
-		
+
    		//this deletes content from other categories
 		var comment_container = document.getElementById('comment_container');
    		while( comment_container.hasChildNodes() ){
