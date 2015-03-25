@@ -1,7 +1,8 @@
-
+			
 
 <!-- header -->
 	<header id = "index_header">
+	<a id = "log_out" href="/logout">Logout</a>
 		<div id = "index_header_container">
 			<h3 id = "location"></h3>
 			<span class="fa fa-arrow-circle-down fa-2x" id = "header_down_arrow"></span>
@@ -9,6 +10,7 @@
 				<input placeholder="Search">
 				<span class="fa fa-search" id = "header_search"></span>
 			</div>
+
 		</div>
 	</header>
 
@@ -174,10 +176,12 @@
 		<!-- form for comments -->
 		<div id = "comment_post">
 			<form action="/comments" method="post">
-				<input type="text" name = "content" placeholder="Comments" required />
-				<input id = "suggestion_id" type = "hidden" name = "suggestion_id" value = "" required />
+			    <input type = "hidden" name = "authenticity_token" value="<%= form_authenticity_token %>" required />			
+				<input type="text" name = "comment[content]" placeholder="Comments" required />
+				<input type = "hidden" id = "suggestion_id"  name = "comment[suggestion_id]" value = "" required />
 				<button>Post</button>
 			</form>
+
 		</div>
 	</section>
 
@@ -188,10 +192,11 @@
 		     	<button id = "modal_close">X</button>
 		     	<h3>Make a new Suggestion</h3>
 		        <form id = "suggestion_form" action = "/suggestions" method = "post">
-		        	<input type="text" name="title" placeholder= "Title" required>
-		        	<input type="text" name="content" placeholder= "Comment" required>
-		        	<input type="text" name="link" placeholder= "Link" required>
-		        	<input id = "category_id" type = "hidden" name = "category_id" value = "" required />
+			        <input type = "hidden" name = "authenticity_token" value="<%= form_authenticity_token %>" required />
+		        	<input type="text" name="suggestion[title]" placeholder= "Title" required>
+		        	<input type="text" name="suggestion[content]" placeholder= "Comment" required>
+		        	<input type="text" name="suggestion[link]" placeholder= "Link" required>
+		        	<input type = "hidden" name = "suggestion[category_id]" value = ""  id = "category_id" required />
 		        	<button>Post</button>
 		        </form>
 		     </div>

@@ -112,6 +112,8 @@ xhr.addEventListener('load', function(e) {
    		currentCategory = category.id;
    		var input_category = document.getElementById('category_id');
    		input_category.value = currentCategory;
+   		// this sets the current clicked suggestion back to undefined
+   		currentSuggestion = undefined;
 
    		for(var i = 0; i <= ul.childNodes.length-1; i++){
  			if(ul.childNodes[i].tagName === "LI"){
