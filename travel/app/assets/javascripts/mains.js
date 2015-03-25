@@ -32,12 +32,12 @@ var currentSuggestion;
 
 // this is the current url
 var current_url = document.URL;
-
+console.log(current_url)
 
 // This returns the user's info
 var UserInfo = function(){
 
-var url = 'http://localhost:3000/return_current_user';
+var url = current_url + 'return_current_user';
 
 var xhr = new XMLHttpRequest();
 
@@ -60,7 +60,7 @@ UserInfo()
 // this is the current user's trip
 var UserTrip = function(){
 
-var url = 'http://localhost:3000/usertrip';
+var url = current_url + 'usertrip';
 
 var xhr = new XMLHttpRequest();
 
@@ -91,7 +91,7 @@ UserTrip();
 // this is all the categories from the trip
 var TripCategories = function(trip_id){
 
-var url = 'http://localhost:3000/categories/' + trip_id + '.json';
+var url = current_url + 'categories/' + trip_id + '.json';
 
 var xhr = new XMLHttpRequest();
 
@@ -160,7 +160,7 @@ xhr.send();
 
 // these are the category suggestions, triggered when the category is clicked on
 var CategorySuggestions = function(category_id){
-	var url = 'http://localhost:3000/suggestion/' + category_id + '/all';
+	var url = current_url + 'suggestion/' + category_id + '/all';
 
 	var xhr = new XMLHttpRequest();
 
@@ -355,7 +355,7 @@ var CategorySuggestions = function(category_id){
 
 // this gets the comments, its called from the end of the suggestion function
 var getComments = function(suggestion_id){
-var url = 'http://localhost:3000/suggestion/' + suggestion_id + '/getcomments.json';
+var url = current_url + 'suggestion/' + suggestion_id + '/getcomments.json';
 
 var xhr = new XMLHttpRequest();
 
