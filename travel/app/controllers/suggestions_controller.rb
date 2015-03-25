@@ -8,6 +8,7 @@ class SuggestionsController < ApplicationController
     @suggestion = Suggestion.new(suggestion_params)
     @suggestion.user_id = current_user.id
     @suggestion.save
+    redirect_to :back
   end
 
   def index
